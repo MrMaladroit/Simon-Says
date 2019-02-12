@@ -1,16 +1,22 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.UI;
 
-public class UIScoreText : MonoBehaviour {
+public class UIScoreText : MonoBehaviour
+{
+    [SerializeField] Text _currentStreakText;
+    [SerializeField] Text _highscoreText;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public void SetCurrentStreakText(int streak)
+    {
+        _currentStreakText.text = "Current Streak: " + streak.ToString();
+    }
+
+    public void SetHighscoreText(int streak)
+    {
+        _highscoreText.text = "High Score: " +  streak.ToString();
+        if (streak > PlayerPrefs.GetInt("High Score"))
+        {
+            PlayerPrefs.SetInt("High score", streak);
+        }
+    }
 }

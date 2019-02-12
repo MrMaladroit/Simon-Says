@@ -356,7 +356,7 @@ GameObject:
   - component: {fileID: 547294803}
   - component: {fileID: 547294805}
   - component: {fileID: 547294804}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: 'Blue Square '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -595,6 +595,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1e84e051596b8a48bae9edfa5377ba9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _currentStreakText: {fileID: 1195976900}
+  _highscoreText: {fileID: 1546828735}
 --- !u!1 &883910676
 GameObject:
   m_ObjectHideFlags: 0
@@ -605,7 +607,7 @@ GameObject:
   - component: {fileID: 883910677}
   - component: {fileID: 883910679}
   - component: {fileID: 883910678}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Yellow Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -691,6 +693,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4c37867682565d47ae605168572ddf1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _blueOption: {fileID: 1653360549}
+  _yellowOption: {fileID: 2001173595}
+  _redOption: {fileID: 1882606824}
+  _greenOption: {fileID: 1184932195}
+  patternLength: 15
+  UIScoreText: {fileID: 803696380}
 --- !u!4 &890385683
 Transform:
   m_ObjectHideFlags: 0
@@ -714,13 +722,13 @@ GameObject:
   - component: {fileID: 891032995}
   - component: {fileID: 891032997}
   - component: {fileID: 891032996}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Red Square Lit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &891032995
 RectTransform:
   m_ObjectHideFlags: 0
@@ -751,7 +759,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.34117648, g: 0.027450982, b: 0.07796012, a: 1}
+  m_Color: {r: 1, g: 0, b: 0.1624999, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -783,13 +791,13 @@ GameObject:
   - component: {fileID: 1052292531}
   - component: {fileID: 1052292533}
   - component: {fileID: 1052292532}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Green Square Lit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1052292531
 RectTransform:
   m_ObjectHideFlags: 0
@@ -820,7 +828,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.048178963, g: 0.34117648, b: 0.027450982, a: 1}
+  m_Color: {r: 0.0625, g: 1, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -850,7 +858,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1184932196}
-  m_Layer: 5
+  - component: {fileID: 1184932197}
+  m_Layer: 8
   m_Name: Green Option
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -877,6 +886,20 @@ RectTransform:
   m_AnchoredPosition: {x: -20, y: 15}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 1, y: 0}
+--- !u!114 &1184932197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1184932195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ad1ed9028f876f47a922b8eabeaf0b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  optionGFX:
+  - {fileID: 1210159007}
+  - {fileID: 1052292532}
 --- !u!1 &1195976898
 GameObject:
   m_ObjectHideFlags: 0
@@ -962,7 +985,7 @@ GameObject:
   - component: {fileID: 1209262995}
   - component: {fileID: 1209262997}
   - component: {fileID: 1209262996}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Red Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1031,7 +1054,7 @@ GameObject:
   - component: {fileID: 1210159006}
   - component: {fileID: 1210159008}
   - component: {fileID: 1210159007}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Green Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1100,13 +1123,13 @@ GameObject:
   - component: {fileID: 1490362246}
   - component: {fileID: 1490362248}
   - component: {fileID: 1490362247}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Yellow Square Lit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1490362246
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1137,7 +1160,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.57898647, g: 0.5943396, b: 0.16540584, a: 1}
+  m_Color: {r: 0.9636363, g: 1, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1242,7 +1265,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1653360550}
-  m_Layer: 5
+  - component: {fileID: 1653360551}
+  m_Layer: 8
   m_Name: Blue Option
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1269,6 +1293,20 @@ RectTransform:
   m_AnchoredPosition: {x: 20, y: -15}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0, y: 1}
+--- !u!114 &1653360551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1653360549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ad1ed9028f876f47a922b8eabeaf0b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  optionGFX:
+  - {fileID: 547294804}
+  - {fileID: 2085290805}
 --- !u!1 &1882606824
 GameObject:
   m_ObjectHideFlags: 0
@@ -1277,7 +1315,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1882606825}
-  m_Layer: 5
+  - component: {fileID: 1882606826}
+  m_Layer: 8
   m_Name: Red Option
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1304,6 +1343,20 @@ RectTransform:
   m_AnchoredPosition: {x: 20, y: 15}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1882606826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1882606824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ad1ed9028f876f47a922b8eabeaf0b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  optionGFX:
+  - {fileID: 1209262996}
+  - {fileID: 891032996}
 --- !u!1 &2001173595
 GameObject:
   m_ObjectHideFlags: 0
@@ -1312,7 +1365,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2001173596}
-  m_Layer: 5
+  - component: {fileID: 2001173597}
+  m_Layer: 8
   m_Name: Yellow Option
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1339,6 +1393,20 @@ RectTransform:
   m_AnchoredPosition: {x: -20, y: -15}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 1, y: 1}
+--- !u!114 &2001173597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2001173595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ad1ed9028f876f47a922b8eabeaf0b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  optionGFX:
+  - {fileID: 883910678}
+  - {fileID: 1490362247}
 --- !u!1 &2085290803
 GameObject:
   m_ObjectHideFlags: 0
@@ -1349,13 +1417,13 @@ GameObject:
   - component: {fileID: 2085290804}
   - component: {fileID: 2085290806}
   - component: {fileID: 2085290805}
-  m_Layer: 5
+  m_Layer: 8
   m_Name: Blue Square Lit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2085290804
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1386,7 +1454,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.027233893, g: 0.06543446, b: 0.33962262, a: 1}
+  m_Color: {r: 0.041251317, g: 0.15755716, b: 0.9716981, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
